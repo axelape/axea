@@ -3,6 +3,15 @@
    Colors and sizes live in :root so they are easy to change.
    ============================================================ */
 
+/* Minecraft-style pixel font (Pixelify Sans, free under the SIL Open Font License) */
+@font-face {
+  font-family: "Pixelify Sans";
+  src: url("../fonts/PixelifySans-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --bg: #1a1a1f;
   --bg-alt: #202026;
@@ -19,6 +28,7 @@
   --shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
   --font: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-display: "Space Grotesk", var(--font);
+  --font-pixel: "Pixelify Sans", "Press Start 2P", monospace;   /* Minecraft-style font for pink text */
   --container: 1180px;
 }
 
@@ -59,10 +69,11 @@ code { background: var(--surface-2); padding: 0.1em 0.4em; border-radius: 6px; f
 .container.narrow { max-width: 760px; }
 
 .eyebrow {
+  font-family: var(--font-pixel);
   text-transform: uppercase;
-  letter-spacing: 0.14em;
-  font-size: 0.74rem;
-  font-weight: 700;
+  letter-spacing: 0.12em;
+  font-size: 0.9rem;
+  font-weight: 600;
   color: var(--accent);
   margin-bottom: 0.6rem;
 }
@@ -110,7 +121,7 @@ code { background: var(--surface-2); padding: 0.1em 0.4em; border-radius: 6px; f
     linear-gradient(135deg, var(--accent) 0 50%, var(--accent-dark) 50% 100%);
   box-shadow: inset 0 -6px 0 #8a8a96;
 }
-.brand-accent { color: var(--accent); }
+.brand-accent { color: var(--accent); font-family: var(--font-pixel); font-weight: 600; font-size: 1.15em; }
 .nav { display: flex; gap: 24px; margin-left: auto; font-weight: 500; color: var(--muted); }
 .nav a:hover { color: var(--text); }
 .nav-toggle {
@@ -169,7 +180,7 @@ code { background: var(--surface-2); padding: 0.1em 0.4em; border-radius: 6px; f
   content: ""; position: absolute; left: 25px; top: 19px;
   border-left: 20px solid #2a0b1c; border-top: 13px solid transparent; border-bottom: 13px solid transparent;
 }
-.hero h1 em { font-style: normal; color: var(--accent); }
+.hero h1 em { font-style: normal; color: var(--accent); font-family: var(--font-pixel); font-weight: 600; font-size: 1.05em; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 28px 0 40px; }
 .hero-stats {
   list-style: none; padding: 0; margin: 0;
