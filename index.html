@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Axea Builds — Premium Minecraft Builds</title>
+  <meta name="description" content="Hand-crafted Minecraft builds for servers, maps and creators. Medieval, modern, fantasy and spawn hubs, delivered as ready-to-paste schematics." />
+  <meta property="og:title" content="Axea Builds — Premium Minecraft Builds" />
+  <meta property="og:description" content="Hand-crafted Minecraft builds for servers, maps and creators." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#catalog">Skip to catalog</a>
+
+  <header class="site-header" id="top">
+    <div class="container nav-row">
+      <a class="brand" href="#top" aria-label="Axea Builds home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-name">Axea<span class="brand-accent">Builds</span></span>
+      </a>
+      <nav class="nav" aria-label="Main">
+        <a href="#catalog">Builds</a>
+        <a href="#process">How it works</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Custom work</a>
+      </nav>
+      <a class="btn btn-primary nav-cta" href="#catalog">Browse builds</a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-nav" id="mobile-nav" hidden>
+      <a href="#catalog">Builds</a>
+      <a href="#process">How it works</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Custom work</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <p class="eyebrow">Premium Minecraft builds</p>
+        <h1>Builds that make your server<br class="br-desktop" /> look <em>finished</em>.</h1>
+        <p class="lead">
+          Hand-crafted spawns, towns, castles and showpieces, delivered as ready-to-paste
+          schematics. Drop them in, open the doors, and let your players explore.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary btn-lg" href="#catalog">Browse the catalog</a>
+          <a class="btn btn-ghost btn-lg" href="#contact">Request a custom build</a>
+        </div>
+        <ul class="hero-stats" aria-label="Highlights">
+          <li><strong data-stat="builds">—</strong><span>builds available</span></li>
+          <li><strong>1.16+</strong><span>Java &amp; Bedrock compatible</span></li>
+          <li><strong>Instant</strong><span>download after purchase</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Trust strip -->
+    <section class="trust container" aria-label="Why buy here">
+      <div class="trust-item">
+        <span class="trust-icon" aria-hidden="true">⬛</span>
+        <div><strong>Every block placed by hand</strong><p>No generated terrain, no copied builds. Original work only.</p></div>
+      </div>
+      <div class="trust-item">
+        <span class="trust-icon" aria-hidden="true">📦</span>
+        <div><strong>Ready-to-paste files</strong><p>Delivered as .schem and world files, with a plain-English install guide.</p></div>
+      </div>
+      <div class="trust-item">
+        <span class="trust-icon" aria-hidden="true">🛠️</span>
+        <div><strong>Free fixes within 14 days</strong><p>If something is off, I fix it. No questions asked.</p></div>
+      </div>
+    </section>
+
+    <!-- Catalog -->
+    <section class="section" id="catalog">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Catalog</p>
+            <h2>Browse builds</h2>
+          </div>
+          <div class="filters" role="group" aria-label="Filter by category">
+            <button class="chip is-active" data-filter="all">All</button>
+            <button class="chip" data-filter="spawn">Spawns &amp; hubs</button>
+            <button class="chip" data-filter="medieval">Medieval</button>
+            <button class="chip" data-filter="modern">Modern</button>
+            <button class="chip" data-filter="fantasy">Fantasy</button>
+            <button class="chip" data-filter="redstone">Redstone</button>
+          </div>
+        </div>
+        <div class="grid" id="build-grid" aria-live="polite"></div>
+        <p class="empty" id="empty-state" hidden>No builds in this category yet. Check back soon.</p>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="section section-alt" id="process">
+      <div class="container">
+        <p class="eyebrow">How it works</p>
+        <h2>From checkout to in-game in minutes</h2>
+        <ol class="steps">
+          <li>
+            <span class="step-num">1</span>
+            <h3>Pick a build</h3>
+            <p>Browse the catalog and open any build to see its size, version and what's included.</p>
+          </li>
+          <li>
+            <span class="step-num">2</span>
+            <h3>Secure checkout</h3>
+            <p>Pay with card or PayPal. You get a download link by email right away.</p>
+          </li>
+          <li>
+            <span class="step-num">3</span>
+            <h3>Paste it in</h3>
+            <p>Load the schematic with WorldEdit or open the included world. The guide walks you through it.</p>
+          </li>
+          <li>
+            <span class="step-num">4</span>
+            <h3>Make it yours</h3>
+            <p>Every build is yours to edit, re-theme and use on any server you run. Commercial use included.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container narrow">
+        <p class="eyebrow">FAQ</p>
+        <h2>Questions, answered</h2>
+        <div class="faq">
+          <details>
+            <summary>Which Minecraft versions do the builds work with?</summary>
+            <p>All builds are made in Java Edition 1.20 and tested back to 1.16. Bedrock world files are included for builds marked "Bedrock ready".</p>
+          </details>
+          <details>
+            <summary>What file formats do I get?</summary>
+            <p>A <code>.schem</code> file for WorldEdit or FAWE, plus a full world save so you can open the build in single-player and look around before placing it.</p>
+          </details>
+          <details>
+            <summary>Can I use a build on a public or paid server?</summary>
+            <p>Yes. Every purchase includes a commercial licence. The only thing you can't do is resell or redistribute the files themselves.</p>
+          </details>
+          <details>
+            <summary>Do you do custom builds?</summary>
+            <p>Yes. Send a short description, a rough size, and your deadline using the form below. You'll get a quote within 48 hours.</p>
+          </details>
+          <details>
+            <summary>What if I need help installing it?</summary>
+            <p>Every download comes with a step-by-step install guide. If you still get stuck, reply to your order email and I'll help you personally.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact / custom -->
+    <section class="section section-alt" id="contact">
+      <div class="container contact-grid">
+        <div>
+          <p class="eyebrow">Custom work</p>
+          <h2>Need something built to order?</h2>
+          <p class="lead">
+            Spawn hubs, lobbies, full adventure maps, or a single showpiece. Tell me what you need
+            and I'll send a quote and timeline within 48 hours.
+          </p>
+          <ul class="checklist">
+            <li>Fixed-price quotes, no surprises</li>
+            <li>Progress screenshots during the build</li>
+            <li>Two rounds of revisions included</li>
+          </ul>
+        </div>
+        <form class="contact-form" id="contact-form" novalidate>
+          <label>
+            <span>Your name</span>
+            <input type="text" name="name" required autocomplete="name" />
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" required autocomplete="email" />
+          </label>
+          <label>
+            <span>Discord (optional)</span>
+            <input type="text" name="discord" placeholder="username" />
+          </label>
+          <label>
+            <span>What do you need?</span>
+            <textarea name="message" rows="5" required placeholder="A medieval spawn hub, roughly 150×150 blocks, for a survival server launching in March."></textarea>
+          </label>
+          <button class="btn btn-primary btn-lg" type="submit">Send request</button>
+          <p class="form-note">Opens your email app with the message filled in.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <div>
+        <span class="brand-name">Axea<span class="brand-accent">Builds</span></span>
+        <p class="footer-small">Hand-crafted Minecraft builds for servers, maps and creators.</p>
+      </div>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="#catalog">Builds</a>
+        <a href="#process">How it works</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+    <div class="container footer-legal">
+      <p>© <span id="year"></span> Axea Builds. All builds are original work.</p>
+      <p>Not an official Minecraft product. Not approved by or associated with Mojang or Microsoft.</p>
+    </div>
+  </footer>
+
+  <!-- Build detail modal -->
+  <div class="modal" id="modal" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" data-close aria-label="Close">×</button>
+      <div class="modal-media"><img id="modal-img" alt="" /></div>
+      <div class="modal-body">
+        <p class="eyebrow" id="modal-category"></p>
+        <h2 id="modal-title"></h2>
+        <p id="modal-desc"></p>
+        <dl class="specs">
+          <div><dt>Size</dt><dd id="modal-size"></dd></div>
+          <div><dt>Version</dt><dd id="modal-version"></dd></div>
+          <div><dt>Includes</dt><dd id="modal-includes"></dd></div>
+        </dl>
+        <div class="modal-actions">
+          <span class="price" id="modal-price"></span>
+          <a class="btn btn-primary btn-lg" id="modal-buy" href="#" target="_blank" rel="noopener">Buy now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/builds.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
