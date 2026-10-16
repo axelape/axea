@@ -18,14 +18,17 @@
   const emptyState = document.getElementById("empty-state");
   const filterButtons = document.querySelectorAll(".chip[data-filter]");
 
+  const TIER_LABELS = { small: "Small build", medium: "Medium build", large: "Large build" };
+
+  function priceOf(build) {
+    return PRICES[build.tier] != null ? PRICES[build.tier] : PRICES.medium;
+  }
+
   function formatPrice(build) {
     try {
-      return new Intl.NumberFormat("en-US", {
-        style: "currency",
-        currency: build.currency || "USD"
-      }).format(build.price);
+      return new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(priceOf(build));
     } catch (e) {
-      return "$" + Number(build.price).toFixed(2);
+      return "$" + Number(priceOf(build)).toFixed(2);
     }
   }
 
@@ -52,7 +55,7 @@
           '  <div class="card-body">' +
           '    <h3><button type="button" data-open="' + b.id + '">' + b.name + "</button></h3>" +
           '    <p class="card-desc">' + b.description + "</p>" +
-          '    <div class="card-meta"><span>' + b.size + "</span></div>" +
+          '    <div class="card-meta"><span>' + (TIER_LABELS[b.tier] || "") + "</span><span>" + b.size + "</span></div>" +
           '    <div class="card-foot">' +
           '      <span class="price">' + formatPrice(b) + "</span>" +
           '      <a class="btn btn-primary btn-sm" ' + buyLinkAttrs(b) + ">Buy</a>" +
@@ -98,7 +101,7 @@
     modalEls.category.textContent = CATEGORY_LABELS[b.category] || b.category;
     modalEls.title.textContent = b.name;
     modalEls.desc.textContent = b.description;
-    modalEls.size.textContent = b.size;
+    modalEls.size.textContent = (TIER_LABELS[b.tier] || "") + " · " + b.size;
     modalEls.version.textContent = b.version;
     modalEls.includes.textContent = b.includes;
     modalEls.price.textContent = formatPrice(b);

@@ -33,7 +33,8 @@ Open `js/builds.js`. Each build is a block that starts with `{` and ends with `}
 Each block has:
 - `name` — shown on the card
 - `category` — one of `spawn`, `medieval`, `modern`, `fantasy`, `redstone`
-- `price` — a number, no currency sign
+- `tier` — `small` ($4.99), `medium` ($6.99) or `large` ($9.99). The price comes from this.
+  To change the three prices, edit the `PRICES` lines at the top of the same file.
 - `size`, `version`, `includes` — shown in the details pop-up
 - `description` — one or two sentences
 - `image` — picture file name
