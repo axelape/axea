@@ -4,28 +4,25 @@
    and change the words. To remove one, delete its block.
 
    category must be one of: spawn, medieval, modern, fantasy, redstone
-   tier      is the size of the build and sets the price:
-               "small"  = $4.99  (under 100 x 100 blocks)
-               "medium" = $6.99  (up to 150 x 150 blocks)
-               "large"  = $9.99  (bigger than 150 x 150 blocks)
-             To change the prices, edit PRICES just below.
+   price     is the price in dollars, just the number (for example 6.99)
    image     is the picture file inside the "images" folder
    buyUrl    is the link to your checkout page (PayPal, Gumroad, Ko-fi, etc.)
    featured  true shows a gold "Featured" tag on the card
    ============================================================ */
 
-const PRICES = {
-  small: 4.99,
-  medium: 6.99,
-  large: 9.99
-};
+/* ---- Hero video ----
+   Put your video file in the "images" folder and write its name here,
+   for example "images/showreel.mp4". A YouTube link also works, for
+   example "https://www.youtube.com/watch?v=XXXXXXXX".
+   Leave it as "" to show the placeholder until your video is ready. */
+const HERO_VIDEO = "";
 
 const BUILDS = [
   {
     id: "kingsreach-spawn",
     name: "Kingsreach Spawn Hub",
     category: "spawn",
-    tier: "large",
+    price: 9.99,
     size: "180 × 180 blocks",
     version: "Java 1.16 – 1.21 · Bedrock ready",
     includes: ".schem, world save, install guide",
@@ -39,7 +36,7 @@ const BUILDS = [
     id: "ironhold-castle",
     name: "Ironhold Castle",
     category: "medieval",
-    tier: "medium",
+    price: 6.99,
     size: "140 × 120 blocks",
     version: "Java 1.16 – 1.21",
     includes: ".schem, world save, install guide",
@@ -53,7 +50,7 @@ const BUILDS = [
     id: "harbor-town",
     name: "Saltmarsh Harbor Town",
     category: "medieval",
-    tier: "large",
+    price: 9.99,
     size: "260 × 200 blocks",
     version: "Java 1.18 – 1.21",
     includes: ".schem, world save, install guide",
@@ -67,7 +64,7 @@ const BUILDS = [
     id: "skyline-penthouse",
     name: "Skyline Penthouse",
     category: "modern",
-    tier: "small",
+    price: 4.99,
     size: "60 × 60 blocks",
     version: "Java 1.17 – 1.21",
     includes: ".schem, world save, install guide",
@@ -81,7 +78,7 @@ const BUILDS = [
     id: "neon-lobby",
     name: "Neon District Lobby",
     category: "spawn",
-    tier: "medium",
+    price: 6.99,
     size: "120 × 120 blocks",
     version: "Java 1.16 – 1.21",
     includes: ".schem, world save, install guide",
@@ -95,7 +92,7 @@ const BUILDS = [
     id: "elder-tree",
     name: "The Elder Tree",
     category: "fantasy",
-    tier: "medium",
+    price: 6.99,
     size: "90 × 90 blocks, 110 tall",
     version: "Java 1.18 – 1.21",
     includes: ".schem, world save, install guide",
@@ -109,7 +106,7 @@ const BUILDS = [
     id: "floating-isles",
     name: "Floating Isles Sanctuary",
     category: "fantasy",
-    tier: "large",
+    price: 9.99,
     size: "200 × 160 blocks",
     version: "Java 1.18 – 1.21",
     includes: ".schem, world save, install guide",
@@ -123,7 +120,7 @@ const BUILDS = [
     id: "auto-farm-complex",
     name: "Automatic Farm Complex",
     category: "redstone",
-    tier: "small",
+    price: 4.99,
     size: "48 × 48 blocks",
     version: "Java 1.19 – 1.21",
     includes: ".schem, world save, install guide",

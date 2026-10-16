@@ -26,6 +26,15 @@ A storefront website for selling Minecraft builds. No coding knowledge needed to
    - **Payhip** (payhip.com): similar to Gumroad.
    - **PayPal "Buy now" button**: works, but you'd have to send the files by hand.
 
+## Adding your video to the top of the page
+
+The top of the page has a video spot. It shows a "Showreel coming soon" box until you add one.
+
+- **Video file:** put it in the `images` folder (MP4 works best, keep it under about 20 MB), then open `js/builds.js` and change `HERO_VIDEO = ""` to `HERO_VIDEO = "images/your-video.mp4"`.
+- **YouTube:** paste the YouTube link instead, for example `HERO_VIDEO = "https://www.youtube.com/watch?v=abc123"`.
+
+It plays silently on a loop, like a showreel.
+
 ## Adding or removing a build
 
 Open `js/builds.js`. Each build is a block that starts with `{` and ends with `},`. Copy one block, paste it below, and change the words. Delete a block to remove that build.
@@ -33,8 +42,7 @@ Open `js/builds.js`. Each build is a block that starts with `{` and ends with `}
 Each block has:
 - `name` — shown on the card
 - `category` — one of `spawn`, `medieval`, `modern`, `fantasy`, `redstone`
-- `tier` — `small` ($4.99), `medium` ($6.99) or `large` ($9.99). The price comes from this.
-  To change the three prices, edit the `PRICES` lines at the top of the same file.
+- `price` — a number, no currency sign (for example `6.99`)
 - `size`, `version`, `includes` — shown in the details pop-up
 - `description` — one or two sentences
 - `image` — picture file name

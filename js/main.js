@@ -18,17 +18,11 @@
   const emptyState = document.getElementById("empty-state");
   const filterButtons = document.querySelectorAll(".chip[data-filter]");
 
-  const TIER_LABELS = { small: "Small build", medium: "Medium build", large: "Large build" };
-
-  function priceOf(build) {
-    return PRICES[build.tier] != null ? PRICES[build.tier] : PRICES.medium;
-  }
-
   function formatPrice(build) {
     try {
-      return new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(priceOf(build));
+      return new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(build.price);
     } catch (e) {
-      return "$" + Number(priceOf(build)).toFixed(2);
+      return "$" + Number(build.price).toFixed(2);
     }
   }
 
@@ -55,7 +49,7 @@
           '  <div class="card-body">' +
           '    <h3><button type="button" data-open="' + b.id + '">' + b.name + "</button></h3>" +
           '    <p class="card-desc">' + b.description + "</p>" +
-          '    <div class="card-meta"><span>' + (TIER_LABELS[b.tier] || "") + "</span><span>" + b.size + "</span></div>" +
+          '    <div class="card-meta"><span>' + b.size + "</span></div>" +
           '    <div class="card-foot">' +
           '      <span class="price">' + formatPrice(b) + "</span>" +
           '      <a class="btn btn-primary btn-sm" ' + buyLinkAttrs(b) + ">Buy</a>" +
@@ -101,7 +95,7 @@
     modalEls.category.textContent = CATEGORY_LABELS[b.category] || b.category;
     modalEls.title.textContent = b.name;
     modalEls.desc.textContent = b.description;
-    modalEls.size.textContent = (TIER_LABELS[b.tier] || "") + " · " + b.size;
+    modalEls.size.textContent = b.size;
     modalEls.version.textContent = b.version;
     modalEls.includes.textContent = b.includes;
     modalEls.price.textContent = formatPrice(b);
@@ -180,6 +174,34 @@
       "?subject=" + encodeURIComponent(subject) +
       "&body=" + encodeURIComponent(body);
   });
+
+  // ----- Hero video -----
+  (function setupHeroVideo() {
+    const slot = document.getElementById("hero-video");
+    if (!slot) return;
+    const src = (typeof HERO_VIDEO === "string" ? HERO_VIDEO : "").trim();
+    if (!src) return; // keep the placeholder
+
+    const yt = src.match(/(?:youtube\.com\/(?:watch\?v=|shorts\/|embed\/)|youtu\.be\/)([A-Za-z0-9_-]{6,})/);
+    if (yt) {
+      const iframe = document.createElement("iframe");
+      iframe.src = "https://www.youtube-nocookie.com/embed/" + yt[1] + "?autoplay=1&mute=1&loop=1&playlist=" + yt[1] + "&controls=0&rel=0&playsinline=1";
+      iframe.title = "CaperBuilds showreel";
+      iframe.allow = "autoplay; encrypted-media; picture-in-picture";
+      iframe.setAttribute("allowfullscreen", "");
+      slot.replaceChildren(iframe);
+    } else {
+      const video = document.createElement("video");
+      video.src = src;
+      video.autoplay = true;
+      video.muted = true;
+      video.loop = true;
+      video.playsInline = true;
+      video.setAttribute("aria-label", "CaperBuilds showreel");
+      slot.replaceChildren(video);
+    }
+    slot.classList.add("has-video");
+  })();
 
   // ----- Misc -----
   document.getElementById("year").textContent = new Date().getFullYear();
