@@ -1,19 +1,19 @@
 /* ============================================================
-   Axea Builds — stylesheet
+   CaperBuilds — stylesheet
    Colors and sizes live in :root so they are easy to change.
    ============================================================ */
 
 :root {
-  --bg: #0d1117;
-  --bg-alt: #121823;
-  --surface: #182030;
-  --surface-2: #1f2a3b;
+  --bg: #1a1a1f;
+  --bg-alt: #202026;
+  --surface: #27272e;
+  --surface-2: #32323a;
   --border: rgba(255, 255, 255, 0.08);
-  --text: #e8edf4;
-  --muted: #9aa7b8;
-  --accent: #5ed16a;        /* grass green */
-  --accent-dark: #3eab4a;
-  --gold: #f2c14e;
+  --text: #f1eff3;
+  --muted: #a7a3ae;
+  --accent: #ff6fb5;        /* pink */
+  --accent-dark: #d9488f;
+  --gold: #ffd3e8;        /* soft pink, used for the Featured tag */
   --danger: #ff6b6b;
   --radius: 14px;
   --shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
@@ -88,8 +88,8 @@ code { background: var(--surface-2); padding: 0.1em 0.4em; border-radius: 6px; f
 .btn:hover { transform: translateY(-1px); }
 .btn:active { transform: translateY(0); }
 .btn-lg { padding: 14px 24px; font-size: 1rem; }
-.btn-primary { background: var(--accent); color: #07140a; }
-.btn-primary:hover { background: #74e07f; }
+.btn-primary { background: var(--accent); color: #2a0b1c; }
+.btn-primary:hover { background: #ff8bc5; }
 .btn-ghost { background: transparent; border-color: rgba(255,255,255,0.18); color: var(--text); }
 .btn-ghost:hover { border-color: rgba(255,255,255,0.4); background: rgba(255,255,255,0.04); }
 .btn-sm { padding: 8px 14px; font-size: 0.9rem; border-radius: 8px; }
@@ -97,7 +97,7 @@ code { background: var(--surface-2); padding: 0.1em 0.4em; border-radius: 6px; f
 /* ---------- Header ---------- */
 .site-header {
   position: sticky; top: 0; z-index: 50;
-  background: rgba(13, 17, 23, 0.8);
+  background: rgba(26, 26, 31, 0.8);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--border);
@@ -108,7 +108,7 @@ code { background: var(--surface-2); padding: 0.1em 0.4em; border-radius: 6px; f
   width: 26px; height: 26px; border-radius: 6px;
   background:
     linear-gradient(135deg, var(--accent) 0 50%, var(--accent-dark) 50% 100%);
-  box-shadow: inset 0 -6px 0 #7a5230;
+  box-shadow: inset 0 -6px 0 #8a8a96;
 }
 .brand-accent { color: var(--accent); }
 .nav { display: flex; gap: 24px; margin-left: auto; font-weight: 500; color: var(--muted); }
@@ -127,8 +127,8 @@ code { background: var(--surface-2); padding: 0.1em 0.4em; border-radius: 6px; f
 .hero-bg {
   position: absolute; inset: 0; z-index: 0;
   background:
-    radial-gradient(900px 500px at 15% -10%, rgba(94, 209, 106, 0.22), transparent 60%),
-    radial-gradient(700px 400px at 95% 10%, rgba(242, 193, 78, 0.14), transparent 60%),
+    radial-gradient(900px 500px at 15% -10%, rgba(255, 111, 181, 0.22), transparent 60%),
+    radial-gradient(700px 400px at 95% 10%, rgba(170, 170, 185, 0.14), transparent 60%),
     linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
   background-size: auto, auto, 40px 40px, 40px 40px;
@@ -176,7 +176,7 @@ code { background: var(--surface-2); padding: 0.1em 0.4em; border-radius: 6px; f
   transition: all 0.15s ease;
 }
 .chip:hover { color: var(--text); border-color: rgba(255,255,255,0.25); }
-.chip.is-active { background: var(--accent); color: #07140a; border-color: var(--accent); }
+.chip.is-active { background: var(--accent); color: #2a0b1c; border-color: var(--accent); }
 
 /* ---------- Catalog grid ---------- */
 .grid {
@@ -190,16 +190,16 @@ code { background: var(--surface-2); padding: 0.1em 0.4em; border-radius: 6px; f
   display: flex; flex-direction: column;
   transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
-.card:hover { transform: translateY(-4px); border-color: rgba(94,209,106,0.5); box-shadow: var(--shadow); }
+.card:hover { transform: translateY(-4px); border-color: rgba(255,111,181,0.5); box-shadow: var(--shadow); }
 .card-media { position: relative; aspect-ratio: 16 / 10; background: var(--surface-2); cursor: pointer; }
 .card-media img { width: 100%; height: 100%; object-fit: cover; }
 .badge {
   position: absolute; top: 12px; left: 12px;
-  background: rgba(13,17,23,0.8); backdrop-filter: blur(6px);
+  background: rgba(26,26,31,0.8); backdrop-filter: blur(6px);
   padding: 4px 10px; border-radius: 999px; font-size: 0.75rem; font-weight: 600;
   text-transform: uppercase; letter-spacing: 0.08em;
 }
-.badge.is-featured { background: var(--gold); color: #1c1402; left: auto; right: 12px; }
+.badge.is-featured { background: var(--gold); color: #5a1238; left: auto; right: 12px; }
 .card-body { padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
 .card-body h3 { margin: 0; font-size: 1.2rem; }
 .card-body h3 button {
@@ -226,7 +226,7 @@ code { background: var(--surface-2); padding: 0.1em 0.4em; border-radius: 6px; f
 .step-num {
   display: inline-grid; place-items: center;
   width: 36px; height: 36px; border-radius: 10px;
-  background: var(--accent); color: #07140a; font-weight: 800; margin-bottom: 14px;
+  background: var(--accent); color: #2a0b1c; font-weight: 800; margin-bottom: 14px;
   font-family: var(--font-display);
 }
 .steps p { margin: 0; color: var(--muted); font-size: 0.95rem; }
@@ -267,7 +267,7 @@ code { background: var(--surface-2); padding: 0.1em 0.4em; border-radius: 6px; f
   padding: 12px 14px; width: 100%; resize: vertical;
 }
 .contact-form input:focus, .contact-form textarea:focus {
-  outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(94,209,106,0.2);
+  outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(255,111,181,0.25);
 }
 .contact-form input.is-invalid, .contact-form textarea.is-invalid { border-color: var(--danger); }
 .form-note { margin: 0; color: var(--muted); font-size: 0.82rem; text-align: center; }

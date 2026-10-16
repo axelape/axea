@@ -1,4 +1,4 @@
-# Axea Builds — website
+# CaperBuilds — website
 
 A storefront website for selling Minecraft builds. No coding knowledge needed to update it.
 
@@ -38,7 +38,7 @@ Each block has:
 - `description` — one or two sentences
 - `image` — picture file name
 - `buyUrl` — your checkout link
-- `featured` — `true` adds a gold "Featured" tag, `false` doesn't
+- `featured` — `true` adds a "Featured" tag, `false` doesn't
 
 ## Putting it online for free (GitHub Pages)
 
@@ -46,7 +46,7 @@ Each block has:
 2. Under "Build and deployment", set Source to **Deploy from a branch**, pick the `main` branch and `/ (root)` folder, then Save.
 3. After a minute, your site is live at `https://axelape.github.io/axea/`.
 
-You can connect your own domain name (like `axeabuilds.com`) on that same settings page later.
+You can connect your own domain name (like `caperbuilds.com`) on that same settings page later.
 
 ## Legal note
 
