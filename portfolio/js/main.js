@@ -8,10 +8,10 @@
 
   const CATEGORY_LABELS = {
     youtube: "YouTube",
-    shorts: "Short-form",
-    music: "Music video",
-    commercial: "Ad",
-    gaming: "Gaming"
+    shorts: "Stutt myndband",
+    music: "Tónlistarmyndband",
+    commercial: "Auglýsing",
+    gaming: "Leikir"
   };
 
   const grid = document.getElementById("work-grid");
@@ -43,12 +43,12 @@
         ? "autoplay=1&mute=1&loop=1&playlist=" + v.id + "&controls=0&playsinline=1&rel=0"
         : "autoplay=1&rel=0&playsinline=1";
       return '<iframe src="https://www.youtube-nocookie.com/embed/' + v.id + "?" + params +
-        '" title="Video" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
+        '" title="Myndband" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
     }
     if (v.type === "vimeo") {
       const params = background ? "autoplay=1&muted=1&loop=1&background=1" : "autoplay=1";
       return '<iframe src="https://player.vimeo.com/video/' + v.id + "?" + params +
-        '" title="Video" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>';
+        '" title="Myndband" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>';
     }
     const src = escapeHtml(v.src);
     return background
@@ -94,11 +94,11 @@
     grid.innerHTML = list.map(function (p) {
       return (
         '<article class="card">' +
-        '  <button type="button" class="card-media" data-open="' + p.index + '" aria-label="Play ' + escapeHtml(p.title) + '">' +
+        '  <button type="button" class="card-media" data-open="' + p.index + '" aria-label="Spila ' + escapeHtml(p.title) + '">' +
         '    <img src="' + escapeHtml(thumbnail(p)) + '" alt="" loading="lazy" />' +
         '    <span class="card-play" aria-hidden="true"></span>' +
         '    <span class="badge">' + escapeHtml(CATEGORY_LABELS[p.category] || p.category) + "</span>" +
-        (p.featured ? '<span class="badge is-featured">Featured</span>' : "") +
+        (p.featured ? '<span class="badge is-featured">Valið</span>' : "") +
         (p.duration ? '<span class="duration">' + escapeHtml(p.duration) + "</span>" : "") +
         "  </button>" +
         '  <div class="card-body">' +
@@ -145,7 +145,7 @@
     player.classList.toggle("is-vertical", !!p.vertical);
     player.innerHTML = p.video
       ? playerHtml(p.video, false)
-      : '<img src="' + escapeHtml(thumbnail(p)) + '" alt="" /><span class="player-note">Video coming soon</span>';
+      : '<img src="' + escapeHtml(thumbnail(p)) + '" alt="" /><span class="player-note">Myndband væntanlegt</span>';
 
     modal.hidden = false;
     document.body.classList.add("modal-open");
@@ -191,12 +191,12 @@
     e.preventDefault();
     if (!form.reportValidity()) return;
     const d = new FormData(form);
-    const subject = "Video project: " + d.get("type") + " (" + d.get("name") + ")";
+    const subject = "Myndbandsverkefni: " + d.get("type") + " (" + d.get("name") + ")";
     const body =
       d.get("message") + "\n\n" +
-      "Name: " + d.get("name") + "\n" +
-      "Email: " + d.get("email") + "\n" +
-      "Type: " + d.get("type");
+      "Nafn: " + d.get("name") + "\n" +
+      "Netfang: " + d.get("email") + "\n" +
+      "Tegund: " + d.get("type");
     window.location.href =
       "mailto:" + EMAIL + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
   });

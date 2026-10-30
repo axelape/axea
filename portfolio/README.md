@@ -1,26 +1,26 @@
-# CaperEdits — video editing portfolio
+# CaperEdits — safn fyrir myndbandsklippingu
 
-A one-page portfolio site for a video editor. Open `index.html` in a browser to see it. No coding knowledge needed to update it.
+Einnar síðu vefur fyrir myndbandsklippara. Opnaðu `index.html` í vafra til að skoða hann. Engin forritunarkunnátta nauðsynleg til að uppfæra hann.
 
-## What to change
+## Hverju á að breyta
 
-Almost everything is in **`js/projects.js`**:
+Nánast allt er í **`js/projects.js`**:
 
-1. **Your email** — replace `hello@example.com`. The contact form sends messages there.
-2. **Showreel** — set `SHOWREEL` to a YouTube link, Vimeo link, or a video file in `images/` (e.g. `"images/showreel.mp4"`). It plays muted on a loop at the top.
-3. **Projects** — each `{ ... },` block is one video. Copy a block to add one, delete it to remove one.
-   - `video`: YouTube, Vimeo, or a file. Clicking the card plays it in a pop-up.
-   - `image`: thumbnail. Leave it `""` for YouTube links and the thumbnail is fetched automatically.
-   - `vertical: true` for 9:16 videos (Shorts, Reels, TikTok).
-   - `category`: `youtube`, `shorts`, `music`, `commercial` or `gaming`.
+1. **Netfangið þitt** — skiptu út `hello@example.com`. Skilaboð úr samskiptaforminu fara þangað.
+2. **Sýnishorn** — settu `SHOWREEL` sem YouTube-hlekk, Vimeo-hlekk eða myndbandsskrá í `images/` (t.d. `"images/showreel.mp4"`). Það spilast hljóðlaust í lykkju efst á síðunni.
+3. **Verkefni** — hver `{ ... },` bútur er eitt myndband. Afritaðu bút til að bæta við, eyddu honum til að fjarlægja.
+   - `video`: YouTube, Vimeo eða skrá. Þegar smellt er á spjaldið spilast myndbandið í glugga.
+   - `image`: forsíðumynd. Hafðu hana `""` fyrir YouTube-hlekki og þá er myndin sótt sjálfkrafa.
+   - `vertical: true` fyrir lóðrétt myndbönd (Shorts, Reels, TikTok).
+   - `category`: `youtube`, `shorts`, `music`, `commercial` eða `gaming`.
 
-In **`index.html`**:
-- Your name, headline and About text.
-- Your photo: replace `<span>Your photo here</span>` inside `about-photo` with `<img src="images/me.jpg" alt="Your name" />`.
-- Tools list and services, if you want to change them.
+Í **`index.html`**:
+- Nafnið þitt, fyrirsögn og textinn um þig.
+- Myndin þín: skiptu `<span>Myndin þín hér</span>` inni í `about-photo` út fyrir `<img src="images/eg.jpg" alt="Nafnið þitt" />`.
+- Forritalistinn og þjónustan, ef þú vilt breyta þeim.
 
-Colors are at the top of `css/style.css`.
+Litirnir eru efst í `css/style.css` (gulur er `--accent`).
 
-## Putting it online
+## Setja vefinn á netið
 
-Upload the whole `portfolio` folder to any static host: GitHub Pages, Netlify (drag and drop the folder) or Cloudflare Pages. All free.
+Hladdu allri `portfolio` möppunni upp á ókeypis hýsingu: GitHub Pages, Netlify (dregur möppuna inn) eða Cloudflare Pages.
